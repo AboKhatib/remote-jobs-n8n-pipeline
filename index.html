@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noir Jobs</title>
+
+  <meta name="description" content="A noir-style job board powered by a published CSV." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<div class="shell">
+  <div class="board">
+
+    
+    <header class="header">
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Live Opportunities
+        </div>
+        <h1>Selected <span>Roles</span></h1>
+        <p class="subtitle">
+          Curated job listings loaded from a published CSV feed. Updated in real-time.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat-pill">
+          <span class="stat-num" id="stat-total">—</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num" id="stat-showing">—</span>
+          <span class="stat-label">Showing</span>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="toolbar">
+      <div class="search-wrap">
+        <input id="search" class="search" placeholder="Search jobs..." />
+        <button id="search-clear" class="search-clear">✕</button>
+      </div>
+
+      <select id="sort-select" class="sort-select">
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
+        <option value="alpha">A → Z</option>
+      </select>
+
+      <button id="refresh-btn" class="refresh-btn">⟳</button>
+    </div>
+
+    
+    <main id="content"></main>
+
+    
+    <footer class="page-footer">
+      <span class="footer-text">Curated job listings powered by a live data feed. Updated in real time.</span>
+      <span id="last-updated" class="footer-tag">—</span>
+    </footer>
+
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
